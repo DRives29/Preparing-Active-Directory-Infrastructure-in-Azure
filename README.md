@@ -322,7 +322,7 @@ Select yes to restart the Client-1 VM, after completing this step we will now lo
 
   <img width="1600" height="1000" alt="Poweshell-1" src="https://github.com/user-attachments/assets/4fd9a295-7428-486e-81d2-869019b80c68" />
 
-    Once logged in you will search in the search bar and locate Windows Powershell, Select that and continue to use  Dc-1’s  Private address to continue to the next step.
+   Once you are logged in Client-1's Virtual machine, Search in the search bar Microsoft Powershell select that program and continue to use DC-1's Private Ip Address.
 
 
    <img width="1600" height="1000" alt="powershell-2" src="https://github.com/user-attachments/assets/30ea576d-af1e-44d2-ab22-3e52a4e52af5" />
