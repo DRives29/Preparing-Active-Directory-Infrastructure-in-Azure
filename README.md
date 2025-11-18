@@ -78,19 +78,19 @@ Now you will create a Virtual Network, select your subscription and resource gro
 <img width="512" height="320" alt="compute infrastructure" src="https://github.com/user-attachments/assets/2072adb0-d2f1-4b76-8c3e-eeb699132c0f" />
 
 Search for networks  then click Create.
-Subscription/Resource group: choose the ones you just set up.
-Name: Active‑Directory‑VNet 
-Region: mirrors the RG.
+Select Subscription/Resource group,  choose the ones you just set up.
+Type in the name  Active‑Directory‑VNet. 
+Select the region  mirrors the RG.
 
 
 <img width="1600" height="1000" alt="Virtual network 3" src="https://github.com/user-attachments/assets/dbf60870-cdf7-4157-9efe-1c9a5e961d14" />
 
-Create another virtual network, select your subscription and resource group from the previous step. Name your new virtual network and select your region for this example it will be (US) East US 2.
+Create another virtual network, select your subscription and resource group from the previous step. Name your new virtual network and select your region, in this case  it will be (US) East US 2.
 
 
 <img width="1600" height="1000" alt="active directory vnet" src="https://github.com/user-attachments/assets/06338b04-c84d-4020-8632-efce1fcb1f25" />
 
-Take a moment to review then go and create—what you end up with is simply a creation. Why it matters: The 10.0.0.0/16 prefix supplies breathing space for an array of subnets.  Define at least one subnet,  Azure will automatically spin up a default if none are defined.  What you see: a callout noting, When you create a VNet you set an address space say 10.0.0.0/16 and then define one or more subnets. Confirm the address space appears as 10.0.0.0/16 and verify that a subnet is available  for instance the default 10.0.0.0/24. Why it matters, The DC and the client need to end up inside this space for them to talk to each other.
+Take a moment to review then click on create, the 10.0.0.0/16 will have many different subnets.  Define at least one subnet,  Azure will automatically create a  default if none are defined. You will see a callout noting, When you create a VNet you set an address space say 10.0.0.0/16 and then define one or more subnets. Confirm the address space appears as 10.0.0.0/16 and verify that a subnet is available  for instance the default 10.0.0.0/24. This way the DC and the client need to end up inside this space for them to talk to each other.
 
 
 
@@ -104,7 +104,7 @@ Create the Domain Controller VM (Windows Server 2022)
 
 <img width="1600" height="1000" alt="Compute infrastructure 2" src="https://github.com/user-attachments/assets/644bd157-9473-4b07-941f-6bdd783c80c7" />
 
-The resource group is called AD‑Lab‑RG. The VM’s name is DC‑1. Make sure the Region stays the same. Administrator account: conjure an username and pair it with a sturdy password. During the configuration process any incoming Remote Desktop Protocol traffic, on port 3389 is permitted. Keep cycling through the step until the UI finally surfaces a Review and Create prompt then jump straight into the solitary Create operation. That machine will serve as your Domain Controller. Pick a size that lets the roles install quickly.
+The resource group is called AD‑Lab‑RG. The VM’s name is DC‑1. Make sure the Region stays the same. For the administrator account create a username and pair it with a memorable and strong password. During the configuration process any incoming Remote Desktop Protocol traffic, on port 3389 is permitted. Keep cycling through the step until the UI finally surfaces a Review and Create prompt then jump straight into the solitary Create operation. That machine will serve as your Domain Controller. Pick a size that lets the roles install quickly.
 
 <img width="1096" height="769" alt="create virtual machine 1" src="https://github.com/user-attachments/assets/eb1630c7-392f-447e-83d3-0259d93d9861" />
 Create a resource group named AD‑Lab‑RG. Additionally create a VM named DC‑1.
@@ -142,7 +142,7 @@ Make sure you choose the right amount of memory, to have a seamless connection.
 
 
 
-When you spin up a Virtual Network (VNet) you first pick an address space—say 10.0.0.0/16. Inside that VNet you then carve out one or more subnets.
+When you spin up a Virtual Network (VNet) you will  first pick an address space say 10.0.0.0/16. Inside that VNet you then carve out one or more subnets.
 
 
 
@@ -153,7 +153,7 @@ DC-1 – Networking tab attaching to your VNet
 
 
 
-Pick the Active Directory Vnet. Leave the subnet at its default setting. Keep the page unchanged then proceed by clicking "Review and Create.”
+Pick the Active Directory Vnet. Leave the subnet at its default setting. Keep the page unchanged then proceed by clicking Review and Create.
 
 
 
@@ -162,7 +162,7 @@ Pick the Active Directory Vnet. Leave the subnet at its default setting. Keep th
 
 
 Head over to the Networking tab it sports drop‑down selectors, for the network and its subnet. Please carry out the following
-The virtual network is optional, for the Active‑Directory VNet. Subnet – leave it at the default. If you like, type, in the subnet your server runs on. Why it matters: this guarantees the domain controller lands squarely within the network you’ve built paving the way for the client to join the domain afterward.
+The virtual network is optional, for the Active‑Directory VNet. Subnet leave it at the default. Type, in the subnet your server runs on. This guarantees the domain controller lands squarely within the network you’ve built paving the way for the client to join the domain afterward.
 
 
 <img width="1600" height="1000" alt="Deployment 1" src="https://github.com/user-attachments/assets/78ebd87c-8076-4d3e-84fe-fc851d0580b7" />
@@ -244,7 +244,7 @@ Deployment successful. Your deployment is a page. Go back into the resource and 
 
  <img width="1600" height="1000" alt="Static" src="https://github.com/user-attachments/assets/d6d1dc35-4edc-409e-874e-52c01d2a3da7" />
 
- On Client‑1 NIC, double‑check that it’s part of the same VNet and that it sits in the correct subnet. When the machines aren’t situated together correctly they fail to discover each other or the domain.
+ On Client‑1 NIC, double   check that it’s part of the same VNet and that it sits in the correct subnet. When the machines aren’t situated together correctly they fail to discover each other or the domain.
 
 
  Disabeling The Firewall
@@ -253,7 +253,7 @@ Deployment successful. Your deployment is a page. Go back into the resource and 
 
  <img width="1600" height="1000" alt="Disabeling firewall" src="https://github.com/user-attachments/assets/0925cdcd-9a8d-44b0-a41c-d3b8b60f0895" />
 
- In this section we will be disabling the fire wall,when setting up AD the Domain Controller and the Client have to ping the Domain Controller and the Client. I see that the Domain Controller and the Client also have to talk through ports and the ports include DNS, LDAP, SMB and others. The firewall can block these until proper inbound/outbound rules are created. Now  select the start menu, click on run then type wf.msc 
+ In this section we will be disabling the fire wall, when setting up AD the Domain Controller and the Client have to ping the Domain Controller and the Client. As you can see that the Domain Controller and the Client also have to talk through ports and the ports include DNS, LDAP, SMB and others. The firewall can block these until proper inbound/outbound rules are created. Now  select the start menu, click on run then type wf.msc 
 
 
  <img width="1600" height="1000" alt="Profile turned off" src="https://github.com/user-attachments/assets/e4d9ac7d-cca9-4761-a03e-c7888631535d" />
@@ -268,7 +268,7 @@ Deployment successful. Your deployment is a page. Go back into the resource and 
 
  <img width="1600" height="1000" alt="public profile" src="https://github.com/user-attachments/assets/d6936b8b-30cd-4466-b97e-dddb2363c9b9" />
 
- Do the same for the following public profile select firewall state as off. Then select apply and all firewalls will be disabled. 
+ Do the same for the following public profile select firewall state as off. Then select apply and all firewalls will be disabled. Just disable the two profiles leave the third as is.
 
 
  <img width="1600" height="1000" alt="windows defender wall" src="https://github.com/user-attachments/assets/eaa1113b-7bfe-4440-ad79-baea2747f4d4" />
@@ -316,7 +316,7 @@ Return to the Azure portal and select restart Client-1
 
 <img width="1600" height="1000" alt="Select restart again" src="https://github.com/user-attachments/assets/ee7ab62c-3e4b-4bdd-bb1a-1d0f0f70130c" />
 
-Select yes to restart the Client-1 VM. After completing this step we will now log into Client-1 to open powershell and run ipconfig /all.  To have access to Client-1 you will need to copy the public IP Address and paste it to remote desktop.
+Select yes to restart the Client-1 VM, after completing this step we will now log into Client-1 to open powershell and run ipconfig /all.  To have access to Client-1 you will need to copy the public IP Address and paste it to remote desktop.
 
 
 
@@ -332,7 +332,7 @@ Select yes to restart the Client-1 VM. After completing this step we will now lo
 
   <img width="1600" height="1000" alt="powershell-33" src="https://github.com/user-attachments/assets/396ea002-e4a2-4041-aff8-13a66c1ccaf2" />
 
-  Now it will ping, notice if done correctly you will see information in regards to the private IP address. If it wasn’t successful you would see messages that state, Destination host unreachable. This could be from having different virtual networks or DC-1’s firewall is not disabled. 
+  Now it will ping, notice if done correctly you will see information in regards to the private IP address. If the ping wasn’t successful you would see messages that state, Destination host unreachable. This could be from having different virtual networks or DC-1’s firewall is not disabled. 
 
 
   <img width="1600" height="1000" alt="powershell-4" src="https://github.com/user-attachments/assets/06ac90d8-3816-496f-ba6d-1a32c24faf64" />
