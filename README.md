@@ -197,7 +197,7 @@ Go back to Virtual machines and click and create a Virtual Machine.
 
 <img width="512" height="258" alt="Client-1" src="https://github.com/user-attachments/assets/68358f3d-3ef8-4216-8918-7615025b2747" />
 
-Createv resource group identical to the one, for the DC. Name it  Client‑1, as the assigned client tag.
+Create a  resource group identical to the one, for the DC. Name it  Client‑1, as the assigned client tag.
 
 <img width="512" height="258" alt="Client-1 East US@" src="https://github.com/user-attachments/assets/221544f0-3661-40b2-9873-40b8bca175c5" />
 
